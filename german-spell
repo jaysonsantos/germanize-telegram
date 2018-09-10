@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# coding: utf-8
+"""CLI command to spell a name in German."""
+import argparse
+
+from spell_it import spell
+
+
+def main():
+    """Main function."""
+    parser = argparse.ArgumentParser(description="Spell words in German")
+    parser.add_argument("word", nargs="+", help="German word")
+    args = parser.parse_args()
+
+    print(spell(" ".join(args.word).lower()))
+
+
+if __name__ == "__main__":
+    main()
